@@ -1,8 +1,8 @@
 locals {
-  users_configuration_json = jsondecode(file("${path.module}/configs/postgres-configuration.json"))
+  cluster_configuration_json = jsondecode(file("${path.module}/config/postgres-configuration.json"))
 
-  users_configuration_combinations = distinct(flatten([
-    for cfg in local.users_configuration_json : [ # Проходимся по пользователям
+  cluster_configuration_combinations = distinct(flatten([
+    for cfg in local.cluster_configuration_json : [ # Проходимся по пользователям
       for mdl in cfg.modules : { # Модули пользователя
         module    = mdl
         user      = cfg.user
@@ -13,7 +13,7 @@ locals {
   ]))
 
   dbs = distinct(flatten([
-    for cfg in local.postgres_configuration_json : [ # Проходимся по пользователям
+    for cfg in local.cluster_configuration_json : [ # Проходимся по пользователям
       for mdl in cfg.modules : [ # Модули пользователя
         for app in fileset("${path.module}/../apps/${mdl}", "**/*.json") : [ # Поиск всех приложений в папке
           for db in (jsondecode(file("${path.module}/../apps/${mdl}/${app}"))).databases : # Проходимся по базам данных приложения
