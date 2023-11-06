@@ -1,4 +1,9 @@
 terraform {
+    required_providers {
+      provider "local" {
+        version = "~>2.4.0"
+      }
+    }
   backend "s3" {
     endpoint.s3 = "http://minioapi.minio-dev:9000"
     bucket     = "terraform"
@@ -7,7 +12,7 @@ terraform {
     access_key = "HOIO0bhei0ttkLWI"
     secret_key = "i9XZ3DxvEL1MzM4W6p6Ze6YtmzTEqMsp"
 
-    force_path_style = true
+    use_path_style = true
     encrypt    = false
 
     skip_region_validation      = true
