@@ -1,9 +1,9 @@
 terraform {
     required_providers {
-      #local {
-      #  version = "~>2.4.0"
-      #}
-      aws {
+      local = {
+        version = "~>2.4.0"
+      }
+      aws = {
         version = "~>5.24.0"
       }
     }
