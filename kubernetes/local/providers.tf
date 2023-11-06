@@ -1,12 +1,13 @@
 terraform {
     required_providers {
-      local {
-        version = "~>2.4.0"
-      }
+      #local {
+      #  version = "~>2.4.0"
+      #}
       aws {
         version = "~>5.24.0"
       }
     }
+}
 
 provider "aws" {
   region                      = "${var.region}"
@@ -21,5 +22,4 @@ provider "aws" {
     #dynamodb = "http://localhost:4569"
     s3       = "http://minioapi.minio-dev:9000"
   }
-}
 }
