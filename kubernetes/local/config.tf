@@ -1,6 +1,6 @@
 terraform {
     required_providers {
-      provider "local" {
+      "local" {
         version = "~>2.4.0"
       }
     }
