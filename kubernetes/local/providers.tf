@@ -1,5 +1,8 @@
 terraform {
     required_providers {
+      yandex = {
+        source = "yandex-cloud/yandex"
+      }
       local = {
         source = "hashicorp/local"
         version = "~>2.4.0"
@@ -26,4 +29,8 @@ provider "aws" {
     #dynamodb = "http://localhost:4569"
     s3       = "http://minioapi.minio-dev:9000"
   }
+}
+
+provider "yandex" {
+  zone = "default"
 }
