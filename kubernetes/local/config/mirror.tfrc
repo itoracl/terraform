@@ -1,5 +1,5 @@
 #
-# export TF_CLI_CONFIG_FILE=./mirror.tfrc
+# export TF_CLI_CONFIG_FILE=./config/mirror.tfrc
 #
 provider_installation {
   network_mirror {
