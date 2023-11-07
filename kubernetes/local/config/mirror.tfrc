@@ -1,0 +1,12 @@
+#
+# export TF_CLI_CONFIG_FILE=./mirror.tfrc
+#
+provider_installation {
+  network_mirror {
+    url = "https://terraform-mirror.yandexcloud.net/"
+    include = ["registry.terraform.io/*/*"]
+  }
+  direct {
+    exclude = ["registry.terraform.io/*/*"]
+  }
+}
