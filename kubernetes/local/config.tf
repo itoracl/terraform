@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    endpoint.s3 = "http://minioapi.minio-dev:9000"
+    #endpoint.s3 = "http://minioapi.minio-dev:9000"
     bucket     = "terraform"
     region     = "default"
     key        = "kubernetes/local/terraform.tfstate"
