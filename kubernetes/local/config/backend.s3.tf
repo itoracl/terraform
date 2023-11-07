@@ -1,5 +1,5 @@
 #
-# export 
+# terraform init -backend-config=./config/backend.s3.tf
 #
 terraform {
   backend "s3" {
