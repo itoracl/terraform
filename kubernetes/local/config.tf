@@ -2,7 +2,7 @@ terraform {
   backend "s3" {
     #endpoint.s3 = "http://minioapi.minio-dev:9000"
     bucket     = "terraform"
-#    region     = "ru-west-itoracle"
+    region     = "ru-west-itoracle"
     key        = "kubernetes/local/terraform.tfstate"
     access_key = "HOIO0bhei0ttkLWI"
     secret_key = "i9XZ3DxvEL1MzM4W6p6Ze6YtmzTEqMsp"
