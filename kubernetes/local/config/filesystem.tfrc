@@ -1,0 +1,12 @@
+#
+# export TF_CLI_CONFIG_FILE=./config/filesystem.tfrc
+#
+provider_installation {
+  filesystem_mirror {
+    path = "/mnt/terraform-mirror"
+    include = ["registry.terraform.io/*/*"]
+  }
+  direct {
+    exclude = ["registry.terraform.io/*/*"]
+  }
+}
